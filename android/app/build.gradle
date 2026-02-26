@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.notes.simple"
-        minSdk 22
+        minSdk 21
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -16,6 +16,10 @@ android {
 
     buildTypes {
         release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
             minifyEnabled false
         }
     }
@@ -27,4 +31,8 @@ android {
 }
 
 dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+
 }
