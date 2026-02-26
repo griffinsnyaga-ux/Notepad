@@ -1,6 +1,6 @@
 {
-  "appId": "com.notes.simple",
-  "appName": "NotesApp",
+  "appId": "com.griffinsnyaga.notepad",
+  "appName": "Elisha Bwire Note App",
   "webDir": "www",
   "bundledWebRuntime": false
 }
