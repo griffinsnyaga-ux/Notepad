@@ -8,6 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: Notepad-main
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -29,6 +33,6 @@ jobs:
         with:
           tag_name: latest
           name: Latest Build
-          files: app/build/outputs/apk/debug/app-debug.apk
+          files: Notepad-main/app/build/outputs/apk/debug/app-debug.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
