@@ -15,18 +15,27 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // IMPORTANT: Load the notes screen layout
         setContentView(R.layout.activity_main)
 
         editTextNote = findViewById(R.id.editTextNote)
         buttonSave = findViewById(R.id.buttonSave)
         listViewNotes = findViewById(R.id.listViewNotes)
 
+        // Load saved notes
         notesList = loadNotes().toMutableList()
-        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, notesList)
+
+        adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_list_item_1,
+            notesList
+        )
+
         listViewNotes.adapter = adapter
 
         buttonSave.setOnClickListener {
-            val noteText = editTextNote.text.toString()
+            val noteText = editTextNote.text.toString().trim()
 
             if (noteText.isNotEmpty()) {
                 notesList.add(noteText)
