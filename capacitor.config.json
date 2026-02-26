@@ -1,0 +1,6 @@
+{
+  "appId": "com.notes.simple",
+  "appName": "NotesApp",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
